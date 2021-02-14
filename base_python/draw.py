@@ -44,31 +44,22 @@ def draw_line( x0, y0, x1, y1, screen, color ):
 
         reflSlant = True
     
-    deltaP1 = 2 * (deltaX - deltaY)
+    deltaP1 = 2 * deltaX
     deltaP2 = -2 * deltaY
     p0 = deltaX - 2 * deltaY
 
-    currX = x0
-    currY = y0
     if reflSlant:
-        temp = currX
-        currX = currY
-        currY = temp
-    currY *= reflY
-    plot(screen, color, currX, currY)
+        plot(screen, color, y0, x0 * reflY)
+    else:
+        plot(screen, color, x0, y0 * reflY)
     for i in range(deltaX):
         if p0 < 0:
             y0 += 1    
             p0 += deltaP1
-        else:
-            p0 += deltaP2
+        p0 += deltaP2
         x0 += 1
 
-        currX = x0
-        currY = y0
         if reflSlant:
-            temp = currX
-            currX = currY
-            currY = temp
-        currY *= reflY
-        plot(screen, color, currX, currY)
+            plot(screen, color, y0, x0 * reflY)
+        else:
+            plot(screen, color, x0, y0 * reflY)
