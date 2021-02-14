@@ -46,7 +46,7 @@ def draw_line( x0, y0, x1, y1, screen, color ):
     
     deltaP1 = 2 * deltaX
     deltaP2 = -2 * deltaY
-    p0 = deltaX - 2 * deltaY
+    p0 = deltaX + deltaP2
 
     if reflSlant:
         plot(screen, color, y0, x0 * reflY)
