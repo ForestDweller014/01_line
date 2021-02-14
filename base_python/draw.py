@@ -22,8 +22,6 @@ def draw_line( x0, y0, x1, y1, screen, color ):
     if deltaY < 0:
         #reflect over y = 0 then reflect back again
         y0 *= -1
-        
-        y1 *= -1
 
         deltaY *= -1
         
@@ -33,10 +31,6 @@ def draw_line( x0, y0, x1, y1, screen, color ):
         temp = x0
         x0 = y0
         y0 = temp
-        
-        temp = x1
-        x1 = y1
-        y1 = temp
 
         temp = deltaX
         deltaX = deltaY
